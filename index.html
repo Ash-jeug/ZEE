@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zee's 18th</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+         @keyframes wavyAnimation {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-10px);
+            }
+            75% {
+                transform: translateY(10px);
+            }
+        }
+
+        .animated-heading {
+            display: inline-block;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+            background-size: 200% 200%;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: gradientShift 5s ease infinite, wavyAnimation 2s ease-in-out infinite;
+        }
+
+        .animated-heading span {
+            display: inline-block;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .floating-emoji {
+            position: absolute;
+            font-size: 40px;
+            user-select: none;
+            pointer-events: none;
+            animation: float-up 2s ease-out;
+            opacity: 0;
+        }
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+
+    
+</head>
+<body>
+    <div class="heading">
+        <header>
+            <h1 class="animated-heading">
+                <span>🎀</span><span>💜</span><span>💖</span><span>H</span><span>a</span><span>p</span><span>p</span><span>y</span>
+                <span>1</span><span>8</span><span>t</span><span>h</span>
+                <span>B</span><span>I</span><span>R</span><span>T</span><span>H</span><span>D</span><span>A</span><span>Y</span>
+                <span>Z</span><span>E</span><span>E</span>
+                <span>💖</span><span>💜</span><span>🎀</span>
+            </h1>
+        </header>
+    </div>
+    <div class="intro">
+        Happy 18th birthday my love🥳🥳🥳💖
+        <p>This is a small reminder of some of the many things that I love about you the most 🥰: (click on each of them for a surprise :)</p>
+    </div>
+
+    <div class="items">
+        <div class="clickable-div" data-emoji="🌷">
+            <img src="https://preview.redd.it/one-of-the-most-beautiful-flowers-i-have-ever-seen-in-my-v0-yltqjfehrs8c1.jpeg?width=640&crop=smart&auto=webp&s=2a97f62c7b45b10c374fcc03f4b0200358f02231" alt="flower">
+            <p>Your breathtaking beauty</p>
+           <p></p>
+        </div>
+
+        <div class="clickable-div" data-emoji="😂">
+            <img src="https://t3.ftcdn.net/jpg/06/14/03/60/360_F_614036000_WrmRnV30WlN2mk9GB393vbkyLXLCMgb9.jpg" alt="cat">
+            <p>Your incredible sense of humour</p>
+        </div>
+
+        <div class="clickable-div" data-emoji="💓">
+            <img src="https://media-api.xogrp.com/images/3ae622bb-d481-4f94-8f33-5c222eea8b44~rs_768.h-cr_0.0.1500.1125" alt="Bible verse">
+            <p>Your relationship with God</p>
+        </div>
+
+        <div class="clickable-div" data-emoji="🎀">
+            <img src="https://i.pinimg.com/originals/1e/e2/69/1ee269d6d6b74a3bf8583e2347697e3c.gif" alt="bear">
+            <p>Your loving and caring personality</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>I just wanted to make something small to show how much I love you and appreciate you. You deserve everything this world has to offer and so much more.
+        </p>
+        <p>I'm so proud of you and how far you've come, you're doing amazing!! And whenever you feel like you're going through a struggle or a rough time I'll always be here to care for you and support you.</p>
+        <p>You've taught me what it is like to truly fall in love and for that I can't thank you enough. You're the reason why I'm still going and striving to be the best version of myself.</p>
+        <p>I want you to never forget that you are hard working, loving, strong, caring, beautiful, bold, kind, funny(very funny),patient and so much more; don't let anyone ever tell you otherwise.</p>
+        <p> Congrats on finally becoming an adult gurllllll!!! 🤭 I pray that the Lord blesses you with many to come, I can't wait to continue growing with you and create more precious memories with you,happy birthday ZEE💖</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const clickableDivs = document.querySelectorAll('.clickable-div');
+
+        clickableDivs.forEach(div => {
+            div.addEventListener('click', (e) => {
+                const emoji = div.getAttribute('data-emoji');
+                for (let i = 0; i < 5; i++) {
+                    createEmoji(e.clientX, e.clientY, div, emoji);
+                }
+            });
+        });
+
+        function createEmoji(x, y, parentDiv, emoji) {
+            const emojiElement = document.createElement('div');
+            emojiElement.innerHTML = emoji;
+            emojiElement.classList.add('floating-emoji');
+            const rect = parentDiv.getBoundingClientRect();
+            emojiElement.style.left = `${x - rect.left}px`;
+            emojiElement.style.top = `${y - rect.top}px`;
+
+            parentDiv.appendChild(emojiElement);
+
+            setTimeout(() => {
+                parentDiv.removeChild(emojiElement);
+            }, 2000);
+        }
+
+        const headingSpans = document.querySelectorAll('.animated-heading span');
+        headingSpans.forEach((span, index) => {
+            span.style.animationDelay = `${index * 0.1}s`;
+        });
+    });
+    </script>
+</body>
+</html>
