@@ -7,12 +7,12 @@ header{
   text-align: center;
   font-style: oblique;
   font-family: "Courier New", Courier, monospace;
-  font-size: 20px;
+  font-size: 16px;
   background-color: rgb(0, 0, 0);
   height: 80px;
   margin-right: -90px;
   margin-left: -90px;
- margin-top: -30px;
+ margin-top: -20px;
 }
 
 .naviagtion ul {
@@ -102,17 +102,17 @@ header{
 }
 
 .panel-switcher {
-  width: 590px;
+  width: 520px;
  margin-left: -10px;
   background-color: #000000;
   box-shadow: 0 10px 10px rgba(0,0,0,0.1);
   user-select: none;
-  height: 680px;
+  height: 500px;
 }
 
 .month-selector {
   display: flex;
-  gap: 10px;
+ 
   justify-content: space-around;
   padding: 10px 0;
   background-color: green;
