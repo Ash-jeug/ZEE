@@ -1,127 +1,79 @@
-body{
-    background-color: green;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
+body {
+  background-color: green;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+header {
   color: white;
   text-align: center;
   font-style: oblique;
   font-family: "Courier New", Courier, monospace;
   font-size: 16px;
   background-color: rgb(0, 0, 0);
-  height: 80px;
-  margin-right: -90px;
-  margin-left: -90px;
- margin-top: -20px;
-}
-
-.naviagtion ul {
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 60px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 15px;
 }
-  .navigation a {
-    list-style: none;
-      position: relative;
-      display: block;
-      text-transform: uppercase;
-      margin: 20px 0;
-      padding: 10px 20px;
-      text-decoration: none;
-      color: #080202;
-      font-family: sans-serif;
-      font-size: 18px;
-      font-weight: 600;
-      transition: .5s;
-      z-index: 1;
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-top: 2px solid #262626;
-        border-bottom: 2px solid #262626;
-        transform: scaleY(2);
-        opacity: 0;
-        transition: .3s;
-      }
-      &:after {
-        content: '';
-        position: absolute;
-        top: 2px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #262626;
-        transform: scale(0);
-        opacity: 0;
-        transition: .3s;
-        z-index: -1;
-      }
-      &:hover {
-        color: #fff;
-        &:before {
-          transform: scaleY(1);
-          opacity: 1;
-        }
-        &:after {
-          transform: scaleY(1);
-          opacity: 1;
-        }
-      }
-    }
 
-    .navigation {
-      background-color: #00ee0c8a;
-      padding: 10px 0;
-      margin-right: -10px;
-      margin-left: -10px;
-  }
-  
-   .navigation ul {
-      display: flex;
-      color: white;
-     
-      transition: background-color 0.3s, transform 0.3s;
-      cursor: pointer;
-      list-style: none;
-      text-align: center;
-      margin: 0 10px;
-  } 
-  
-   .navigation ul {
-      display: flex;
-      justify-content: center;
-      gap: auto;  
-  } 
+.navigation {
+  background-color: #00ee0c8a;
+  width: 100%;
+  overflow-x: hidden;
+}
 
-  * {
-    box-sizing: border-box;
+.navigation ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 15px;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #080202;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 10px;
+  transition: 0.5s;
+  position: relative;
 }
 
 .panel-switcher {
-  width: 520px;
- margin-left: -10px;
+  width: 100%;
+  max-width: 412px;
+  margin: 0 auto;
   background-color: #000000;
   box-shadow: 0 10px 10px rgba(0,0,0,0.1);
   user-select: none;
-  height: 500px;
 }
 
 .month-selector {
   display: flex;
- 
   justify-content: space-around;
   padding: 10px 0;
   background-color: green;
+  width: 100%;
 }
 
 .month-btn {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
   transition: opacity 0.3s ease;
   color: #000000;
@@ -136,7 +88,7 @@ header{
 .panel-content {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 500px;
   overflow: hidden;
 }
 
@@ -158,14 +110,16 @@ header{
 
 .panel-header {
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   background-color: rgba(0,0,0,0.7);
   color: white;
+  font-size: 16px;
 }
 
 .panel-media {
   flex-grow: 1;
-  height: 450px;
+  width: 100%;
+  height: 400px;
   object-fit: cover;
 }
 
@@ -176,7 +130,7 @@ header{
   top: 0;
   left: 0;
   right: 0;
-  padding: 10px 5px;
+  padding: 5px;
   z-index: 10;
 }
 
@@ -206,4 +160,30 @@ header{
   height: 100%;
   z-index: 20;
   background: transparent;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 412px) {
+  header {
+      font-size: 14px;
+      height: 50px;
+  }
+
+  .navigation ul {
+      gap: 10px;
+      padding: 5px;
+  }
+
+  .navigation a {
+      font-size: 14px;
+      padding: 3px 8px;
+  }
+
+  .month-btn {
+      font-size: 14px;
+  }
+
+  .panel-media {
+      height: 350px;
+  }
 }
