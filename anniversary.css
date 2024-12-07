@@ -26,32 +26,86 @@ header {
   padding: 0 15px;
 }
 
-.navigation {
-  background-color: #00ee0c8a;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.navigation ul {
+.naviagtion ul {
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: 15px;
-  padding: 10px;
-  flex-wrap: wrap;
 }
+  .navigation a {
+    list-style: none;
+      position: relative;
+      display: block;
+      text-transform: uppercase;
+      margin: 20px 0;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #080202;
+      font-family: sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      transition: .5s;
+      z-index: 1;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-top: 2px solid #262626;
+        border-bottom: 2px solid #262626;
+        transform: scaleY(2);
+        opacity: 0;
+        transition: .3s;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #262626;
+        transform: scale(0);
+        opacity: 0;
+        transition: .3s;
+        z-index: -1;
+      }
+      &:hover {
+        color: #fff;
+        &:before {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+        &:after {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+      }
+    }
 
-.navigation a {
-  text-decoration: none;
-  color: #080202;
-  text-transform: uppercase;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 5px 10px;
-  transition: 0.5s;
-  position: relative;
-}
+    .navigation {
+      background-color: #09ff008c;
+      padding: 10px 0;
+  }
+  
+   .navigation ul {
+      display: flex;
+      color: white;
+     
+      transition: background-color 0.3s, transform 0.3s;
+      cursor: pointer;
+      list-style: none;
+      text-align: center;
+      margin: 0 10px;
+  } 
+  
+   .navigation ul {
+      display: flex;
+      justify-content: center;
+      gap: auto;  
+  } 
+
 
 .panel-switcher {
   width: 100%;
@@ -88,7 +142,7 @@ header {
 .panel-content {
   position: relative;
   width: 100%;
-  height: 700px;
+  height: 600px;
   overflow: hidden;
 }
 
