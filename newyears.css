@@ -1,0 +1,25 @@
+body{
+    background-image: url("https://img.freepik.com/premium-vector/new-year-loading-2025-pixel-progress-bar-isolated-black-blackboard-happy-new-year-greeting-card_985938-937.jpg");
+}
+
+header{
+    text-align: center;
+    background-color: pink;
+    height: 70px;
+    margin-right: -90px;
+    margin-left: -90px;
+   margin-top: -5px;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+   font-size: 30px;
+}
+
+footer{
+    text-align: center;
+    background-color: pink;
+    height: 100px;
+    margin-right: -90px;
+    margin-left: -90px;
+   margin-top: 730px;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+   font-size: 45px;    
+}
