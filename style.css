@@ -65,7 +65,7 @@ body {
 }
 
 .clickable-div img {
-    width: 300px;
+    width: 250px;
     height: auto;
     max-height: 300px;
     object-fit: cover;
