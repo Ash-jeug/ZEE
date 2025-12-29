@@ -9,14 +9,14 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   font-family: Arial, sans-serif;
-  background-image: url('https://i.pinimg.com/originals/fb/02/47/fb02473b93a01c4413d81ce0fb46b4bf.gif');
 }
 
 header {
   color: white;
   text-align: center;
-  font-family: 'Lucida Handwriting', cursive;
-  font-size: 1rem;
+  font-style: oblique;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
   background-color: rgb(0, 0, 0);
   height: 60px;
   display: flex;
@@ -109,13 +109,11 @@ header {
 
 .panel-switcher {
   width: 100%;
-  max-width: 1000px;
+  max-width: 412px;
   margin: 0 auto;
   background-color: #000000;
   box-shadow: 0 10px 10px rgba(0,0,0,0.1);
   user-select: none;
-  height: auto;
-  max-height: 800px;
 }
 
 .month-selector {
